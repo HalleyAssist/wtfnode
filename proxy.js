@@ -23,3 +23,6 @@ process.on('SIGINT', function () {
         process.exit(1);
     }
 });
+child.on('exit', function(code){
+    process.exit(code);
+})

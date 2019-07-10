@@ -24,5 +24,7 @@ process.on('SIGINT', function () {
     }
 });
 child.on('exit', function(code){
-    process.exit(code);
+    setTimeout(function(){
+        process.exit(code);
+    }, 1)
 })

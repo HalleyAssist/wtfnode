@@ -634,6 +634,9 @@ function dump() {
                 callSite = getCallsite(fn);
 
             log('info', '  - (%d ~ %s) %s @ %s:%d', t._idleTimeout, formatTime(t._idleTimeout), fn.name || fn.__name || callSite.name || '(anonymous)', callSite.file, callSite.line);
+            if(fn.stack){
+                log('info', fn.stack)
+            }
         });
     }
 

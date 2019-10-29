@@ -26,6 +26,7 @@ process.on('SIGINT', function () {
 });
 process.on('SIGUSR2', function () {
     console.log("WTFNODE received SIGUSR2")
+    child.kill('SIGUSR2');
     count++;
     if (count > 1) {
         console.error('Forcefully terminating, unable to gather process info');

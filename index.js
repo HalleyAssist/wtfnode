@@ -672,6 +672,7 @@ function isChannel(obj) {
 
 function init() {
     process.on('SIGINT', function () {
+        console.log("WTFNODE: dumping")
         // let other potential handlers run before exiting
         process.nextTick(function () {
             try { dump(); }
@@ -680,6 +681,7 @@ function init() {
         });
     });
     process.on('SIGUSR2', function () {
+        console.log("WTFNODE: dumping")
         // let other potential handlers run before exiting
         process.nextTick(function () {
             try { dump(); }

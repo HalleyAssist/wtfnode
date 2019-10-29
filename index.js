@@ -679,6 +679,14 @@ function init() {
             process.exit();
         });
     });
+    process.on('SIGUSR2', function () {
+        // let other potential handlers run before exiting
+        process.nextTick(function () {
+            try { dump(); }
+            catch (e) { log('error', e); }
+            process.exit();
+        });
+    });
 }
 
 module.exports = {

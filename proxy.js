@@ -16,6 +16,7 @@ var child = cp.fork(PATH.join(__dirname, 'index.js'), process.argv.slice(2), {
 
 var count = 0;
 process.on('SIGINT', function () {
+    console.log("WTFNODE received SIGNINT")
     count++;
     if (count > 1) {
         console.error('Forcefully terminating, unable to gather process info');
